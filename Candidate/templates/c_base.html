@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a3b54532bc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{%static 'css/joblist.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Oleo+Script:wght@700&family=Ramaraja&family=Rubik+Mono+One&family=Smokum&display=swap"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Oleo+Script:wght@700&family=Ramaraja&family=Rubik+Mono+One&family=Russo+One&family=Saira+Semi+Condensed:wght@400;600&family=Smokum&display=swap"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Lobster+Two:ital@1&family=Oleo+Script:wght@700&family=Ramaraja&family=Rubik+Mono+One&family=Russo+One&family=Saira+Semi+Condensed:wght@400;600&family=Smokum&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Cookie&family=Lobster+Two:ital@1&family=Oleo+Script:wght@700&family=Ramaraja&family=Rubik+Mono+One&family=Russo+One&family=Saira+Semi+Condensed:wght@400;600&family=Send+Flowers&family=Smokum&family=Tangerine:wght@700&display=swap"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Cookie&family=Lobster+Two:ital@1&family=Oleo+Script:wght@700&family=Ramaraja&family=Rubik+Mono+One&family=Russo+One&family=Saira+Semi+Condensed:wght@400;600&family=Send+Flowers&family=Shadows+Into+Light&family=Smokum&family=Tangerine:wght@700&display=swap"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Cookie&family=Courgette&family=Lobster+Two:ital@1&family=Oleo+Script:wght@700&family=Ramaraja&family=Rubik+Mono+One&family=Russo+One&family=Saira+Semi+Condensed:wght@400;600&family=Send+Flowers&family=Shadows+Into+Light&family=Smokum&family=Tangerine:wght@700&display=swap"
+          rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a3b54532bc.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a3b54532bc.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Cookie&family=Courgette&family=Lobster+Two:ital@1&family=Oleo+Script:wght@700&family=Orbitron&family=Ramaraja&family=Rubik+Mono+One&family=Russo+One&family=Saira+Semi+Condensed:wght@400;600&family=Send+Flowers&family=Shadows+Into+Light&family=Smokum&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        .nav-link:hover
+        {
+        font-weight:bold;
+        background-color:orange;
+        border-radius:10px;
+        }
+    .navbar-brand:hover
+    {
+    color:orange !important;
+    }
+    .body{
+    box-sizing:border-box;
+    }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="container ">
+    <div class="row">
+        <div class="col-sm-3 mt-5 ">
+            <img src="{% static 'images/joblogo.jpeg'  %}" style="width:180px; height:110px" ; alt="">
+        </div>
+        <div class="col-sm-6 mt-5 text-center">
+            <span style="font-weight:bold;font-size:60px;font-family: 'Orbitron', sans-serif;">
+                              <span style="color:rgb(21, 178, 184)">Job Portal</span>
+
+            </span>
+                        <p style="margin-top:-20px;font-family: 'Orbitron', sans-serif;color:rgb(32, 177, 10);">for a promising future</p>
+
+
+        </div>
+        <div class="col-sm-3 mt-5" style="padding-left:10%">
+            <span style="font-weight:bold">
+                <ul class="nav me-auto p-3" >
+                    <a href=""><li style="padding-left:35px;" ><span><i class="fa fa-2x fa-twitter pl-1"></i></span></li></a>
+                    <a href=""><li style="padding-left:20px;"><span><i class="fa fa-2x fa-facebook pl-2"></i></span></li></a>
+                    <a href=""><li style="padding-left:15px;"><span><i class="fa fa-2x fa-instagram pl-3"></i></span></li></a>
+                </ul>
+
+            </span>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(98, 146, 236)">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white " style="font-family: 'Lemonada', cursive;font-size:30px" href="#">Job
+            Portal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page"
+                       style="font-family: 'Lemonada', cursive;font-size:20px" href="{%url 'c_home'%}">Home</a>
+                </li>
+                <li class="nav-item">
+
+
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" style="font-family: 'Lemonada', cursive;font-size:20px"
+                       href="{%url 'c_appliedjobs'%}">Applied Jobs</a>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary position-relative">
+                        <a href="{%url 'notification'%}" style="color:white;">Inbox</a>
+<!--  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">-->
+<!--                    {{accepted|length}}-->
+<!--                        <span class="visually-hidden">unread messages</span>-->
+<!--                        </span>-->
+                    </button>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-white " style="font-family: 'Lemonada', cursive;font-size:20px"
+                       href="#">{{request.user}}</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        <a href="{%url 'c_viewprofile'%}"><img class="rounded-circle article-image"
+                                                               src="{{request.user.applicant.profile_pic.url}}" alt=""
+                                                               height="35px;" style="margin-top:-22px; "></a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                            <li><a class="dropdown-item" href="{%url 'c_password_change'%}">change password</a></li>
+                            <li><a class="dropdown-item" href="#"></a></li>
+                        </ul>
+                </li>
+                <li>
+                    <!--                    <a href="{%url 'c_viewprofile'%}"><img class="rounded-circle article-image" src="{{request.user.applicant.profile_pic.url}}" alt="" height="45px;"></a>-->
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" style="font-family: 'Lemonada', cursive;font-size:20px"
+                       href="{%url 'logout'%}">Signout</a>
+                </li>
+
+
+            </ul>
+
+
+        </div>
+    </div>
+</nav>
+{%block body_block%}
+
+
+{%endblock%}
+</body>
+</html>

@@ -1,0 +1,34 @@
+{%extends 'e_base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 mt-5">
+<!--            <h3 style="text-align: center;font-family: 'Smokum', cursive;font-size:67px">All Applicants</h3>-->
+            <table class="table">
+                <tr>
+                    <th>Candidate Name</th>
+                    <th>Job Title</th>
+                    <th>Skills</th>
+                    <th>Qualification</th>
+                    <th>Applied Date</th>
+                </tr>
+
+                <tr>
+                    {%for applicant in applicants%}
+                    <td>{{applicant.applicant.applicant_name}}</td>
+                    <td>{{applicant.job.job_title}}</td>
+                    <td>{{applicant.applicant.skills}}</td>
+                    <td>{{applicant.applicant.qualification}}</td>
+                    <td>{{applicant.submitted_date}}</td>
+
+                </tr>
+                {%endfor%}
+
+
+            </table>
+
+        </div>
+
+
+{%endblock%}

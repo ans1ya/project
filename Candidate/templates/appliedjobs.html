@@ -1,0 +1,46 @@
+{%extends 'c_base.html'%}
+{%block body_block%}
+
+
+<div class="container">
+    <div class="row mt-5">
+
+        <div class="col-2"></div>
+        <div class="col-8">
+            <h3 style="margin-left:243px;font-family: 'Smokum', cursive;font-size:68px;">Applied Jobs</h3>
+            <hr>
+            <table class="table">
+                <tr>
+                    <th>Job Title</th>
+                    <th>Company Name</th>
+                    <th>Applied Date</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Status Updated On</th>
+                </tr>
+                {%for application in applications%}
+                <tr>
+                    <td><a href="{%url 'c_jobdetail' application.job.id%}">{{application.job.job_title}}</a></td>
+                    <td>{{application.job.company.company_name}}</td>
+                    <td>{{application.submitted_date}}</td>
+                    <td>{{application.job.location}}</td>
+                    <td>{{application.status}}</td>
+                    {%if application.status  %}
+                    <td>{{application.status_updated_date}}</td>
+                    {%endif%}
+
+                </tr>
+                {%endfor%}
+            </table>
+
+        </div>
+        <div class="col-2"></div>
+
+    </div>
+
+
+</div>
+
+
+
+{%endblock%}

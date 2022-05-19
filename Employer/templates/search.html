@@ -1,0 +1,33 @@
+{%extends 'e_base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        {%if query%}
+        <div class="col-10">
+            <table class="table">
+                <tr>
+                    <th>Job Title</th>
+                    <th>Candidate Name</th>
+                </tr>
+                {%for jobs in applications%}
+                <tr>
+                    <td>{{jobs.job.job_title}}</td>
+                    <td>{{jobs.applicant.applicant_name}}</td>
+
+                </tr>
+                {%endfor%}
+
+
+            </table>
+
+
+        </div>
+        {%endif%}
+        <div class="col-1"></div>
+    </div>
+
+</div>
+
+
+{%endblock%}

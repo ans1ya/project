@@ -1,0 +1,55 @@
+{%extends 'e_base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-9"></div>
+        <div class="col-1"></div>
+        <div class="col-2">
+            <a href="{%url 'expiredjobs'%}"><h3>Expired Jobs</h3></a>
+        </div>
+        {%for job in jobs%}
+        <div class="card border border-dark" style="width: 24rem;margin-left:50px;margin-top:30px;">
+            <img src="{{job.image.url}}" class="card-img-top" alt="..." height="200px">
+            <div class="card-body">
+                <h5 class="card-title"><strong>{{job.company.company_name}}</strong></h5>
+                <h5 class="card-title">Job Title:{{job.job_title}}</h5>
+                <p class="card-text">Created date:{{job.create_date}}</p>
+                <p class="card-text">Valid till:{{job.end_date}}</p>
+                <div>
+                    {%if request.user.employer%}
+                    <a href="{%url 'editjob' job.id%}" class="btn btn-primary">Edit</a>
+                    <a href="{%url 'jobdetail' job.id%}" class="btn btn-success">View more</a>
+                    <a href="{%url 'applicantlist' job.id %}" class="btn btn-warning">Applicants</a>
+                    {%endif%}
+
+                </div>
+
+            </div>
+
+        </div>
+        {%endfor%}
+    </div>
+    <div class="pagination mt-5">
+    <span class="step-links">
+        {% if jobs.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ jobs.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ jobs.number }} of {{ jobs.paginator.num_pages }}.
+        </span>
+
+        {% if jobs.has_next %}
+            <a href="?page={{ jobs.next_page_number }}">next</a>
+            <a href="?page={{ jobs.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+</div>
+
+
+</div>
+
+
+{%endblock%}

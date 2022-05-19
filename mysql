@@ -1,0 +1,17 @@
+step 1: mysql module installation
+pip install mysqlclient
+
+step2:create a database in mysql
+create database name;
+
+step3:
+DATABASES = {
+            'default':
+                { 'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'DB_name',
+                'HOST': '127.0.0.1',
+                'PORT': '3306',
+                 'USER': 'root',
+                 'PASSWORD': 'DB_password', 
+                 }
+                  }

@@ -1,0 +1,32 @@
+{%extends 'e_base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row mt-5">
+
+        <div class=" mt-5">
+            <div class="card mb-3 border border-dark" style="max-width: 100%;" >
+                <div class="row g-0">
+                    <div class="col-md-4 mt-5">
+                        <img src="{{profile.company_logo.url}}" class="img-fluid rounded-start" alt="..." style="margin-top:70px;margin-left:90px;">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-family: 'Russo One', sans-serif;font-size:30px ">CompanyName:{{profile.company_name}}</h5>
+                            <p class="card-text" style="font-family: 'Lobster Two', cursive;font-size:30px;"><strong  style="font-family: 'Russo One', sans-serif;font-size:20px">Name of Recruter:</strong> {{profile.recruter_name}}</p>
+                            <p class="card-text"style="font-family: 'Lobster Two', cursive;font-size:30px;" ><strong style="font-family: 'Russo One', sans-serif;font-size:20px">Designation:</strong>{{profile.Designation}}</p>
+                            <p class="card-text" style="font-family: 'Lobster Two', cursive;font-size:30px;"><strong style="font-family: 'Russo One', sans-serif;font-size:20px">Number of Employees:</strong> {{profile.number_of_employees}}</p>
+                            <p class="card-text" style="font-family: 'Lobster Two', cursive;font-size:30px;"><strong style="font-family: 'Russo One', sans-serif;font-size:20px">Started on:</strong> {{profile.start_date}}</p>
+                            <p class="card-text"style="font-family: 'Lobster Two', cursive;font-size:30px;" ><strong style="font-family: 'Russo One', sans-serif;font-size:20px">Services:</strong>{{profile.services}}</p>
+                            <p class="card-text" style="font-family: 'Lobster Two', cursive;font-size:30px;"><strong style="font-family: 'Russo One', sans-serif;font-size:20px">website:</strong>{{profile.website}}</p><p class="card-text"></p>
+                            <a href="{%url 'editprofile' profile.id %}" class="btn btn-primary">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,11 @@
+.animation{
+@keyframes left to right{
+from{left:0px;}
+to{right:200px;}
+animation-duration:infinite;
+}
+}
+
+
+
+

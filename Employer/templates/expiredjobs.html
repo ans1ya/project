@@ -1,0 +1,40 @@
+{%extends 'e_base.html'%}
+{%block body_block%}
+
+<div class="conrainer">
+    <div class="row">
+        {%if jobs %}
+        <div class="col-2"></div>
+        <div class="col-8">
+            {%for job in jobs%}
+        <div class="card border border-dark" style="width: 24rem;margin-left:50px;margin-top:30px;">
+            <img src="{{job.image.url}}" class="card-img-top" alt="..." height="200px">
+            <div class="card-body">
+                <h5 class="card-title"><strong>{{job.company.company_name}}</strong></h5>
+                <h5 class="card-title">Job Title:{{job.job_title}}</h5>
+                <p class="card-text">Created date:{{job.create_date}}</p>
+                <p class="card-text">Expired on:{{job.end_date}}</p>
+                <div>
+                </div>
+
+            </div>
+        </div>
+            <a href="{%url 'listjob'%}">Back</a>
+                <h4>Do you want to repost this??<a href="{%url 'editjob' job.id %}">Click Here</a></h4>
+        {%endfor%}
+
+        </div>
+        <div class="col-2"></div>
+        {%else%}
+        <h4 style="margin-left:475px;margin-top:118px;font-family: 'Lobster Two', cursive;font-size:80px;">you have no expired jobs!!</h4>
+        {%endif%}
+
+
+
+    </div>
+
+
+</div>
+
+
+{%endblock%}

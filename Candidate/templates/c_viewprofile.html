@@ -1,0 +1,49 @@
+{%extends 'c_base.html'%}
+{%block body_block%}
+{%load static%}
+<div class="container">
+    <div class="row" style="margin-top:165px">
+        <div class="col-1"></div>
+        <div class="col-10" style="margin-left:241px">
+            <div class="card mb-3 border border-dark" style="max-width: 790px;">
+                <div class="row g-0">
+                    <div class="col-md-4 mt-5">
+                        <img src="{{profile.profile_pic.url}}" class="img-fluid rounded-start" style="margin-top:67px" alt="...">
+                    </div>
+                    <div class="col-md-8 ">
+                        <div class="card-body" >
+                            <h5 class="card-title"style="font-family: 'Russo One', sans-serif;font-size:30px" >{{profile.applicant_name}}</h5>
+                            <p style="font-family: 'Lobster Two', cursive;font-size:30px;"><strong style="font-family: 'Russo One', sans-serif;font-size:20px" >Qualification:</strong>{{profile.qualification}}</p>
+                            <p style="font-family: 'Lobster Two', cursive;font-size:30px;"><strong style="font-family: 'Russo One', sans-serif;font-size:20px">Experience:</strong>{{profile.experience}}Years</p>
+                            <p style="font-family: 'Lobster Two', cursive;font-size:30px;" ><strong style="font-family: 'Russo One', sans-serif;font-size:30px">Skills:</strong>{{profile.skills}}</p>
+                            <a href="{{profile.resume.url}}"style="font-family: 'Russo One', sans-serif;font-size:30px" >view resume</a>
+                            <div>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-1"></div>
+
+    </div>
+
+
+    <div class="row ">
+
+        <div class=""  style="margin-left:387px">
+            <a class="btn btn-primary " href="{%url 'c_editprofile' profile.id%}" style="margin-left:140px;">Edit</a>
+            <a class="btn btn-primary" href="{%url 'c_home' %}" style="margin-left:80px">Back</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,75 @@
+{%extends 'e_base.html'%}
+{%block body_block%}
+{%load static%}
+
+
+<div class="container mt-3">
+    <div style="font-family: 'Ramaraja', serif;font-size:20px;background-color: rgb(8, 31, 73);color: blanchedalmond;width:100%;text-align:center">
+        <marquee width="100%" direction="right" height="30px" margin-top="2px">
+            Welcome to Job Portal
+        </marquee>
+    </div>
+
+</div>
+<div class="container-fluid " style="margin-top:1%">
+    <img src="{% static 'images/employerhome.jpeg' %}" style="height:540px;width:100%" alt="">
+</div>
+<div class="container">
+    <div class="row mt-4 mb-5">
+        <div class="col-3 mt-4">
+            <div class="card border border-dark " style="width: 18rem;">
+                <img class="card-img-top" src="{%static 'images/eprofile.jpeg'%}" alt="Card image cap">
+                <div class="card-body">
+                    {% if request.user.employer %}
+                    <a class="btn btn-primary" style="font-family: 'Lemonada', cursive;font-size:20px;margin-left:73px"
+                       href="{%url 'viewprofile'%}">View Profile</a>
+                    {%else%}
+                    <a class="btn btn-primary" style="font-family: 'Lemonada', cursive;font-size:20px;margin-left:73px"
+                       href="{%url 'addprofile'%}">Add Profile</a>
+                    {%endif%}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3 mt-4">
+            <div class="card border border-dark" style="width: 18rem; height:363px ">
+                <img class="card-img-top" src="{%static 'images/postjob.jpeg'%}" alt="Card image cap"
+                     style="height:290px;">
+                <div class="card-body">
+                    <a class="btn btn-primary" style="font-family: 'Lemonada', cursive;font-size:20px;margin-left:73px;"
+                       href="{%url 'addjob'%}">Post a Job</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mt-4">
+            <div class="card border border-dark" style="width: 18rem;height:363px">
+                <img class="card-img-top" src="{%static 'images/listapplicants.jpeg'%}" alt="Card image cap"
+                     style="height:290px;">
+                <div class="card-body ">
+                    <a class="btn btn-primary " style="font-family: 'Lemonada', cursive;font-size:20px;margin-left:73px"
+                       href="{%url 'listapplications'%}">All Applicants</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mt-4 ">
+            <div class="card border border-dark" style="width: 18rem;height:363px">
+                <img class="card-img-top" src="{%static 'images/postedjobs.jpeg'%}" alt="Card image cap"
+                     style="height:290px;">
+                <div class="card-body ">
+                    <a class="btn btn-primary " style="font-family: 'Lemonada', cursive;font-size:20px;margin-left:73px"
+                       href="{%url 'listjob'%}">Posted Jobs</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+{%endblock%}
+</body>
+</html>

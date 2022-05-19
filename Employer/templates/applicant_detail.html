@@ -1,0 +1,33 @@
+{%extends 'e_base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="card mb-3 border border-dark" style="max-width: 790px;" >
+            <div class="row g-0">
+                <div class="col-md-4 mt-5">
+                    <img src="{{applicant.profile_pic.url}}" class="img-fluid rounded-start"  alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: 'Russo One', sans-serif;font-size:30px">{{applicant.applicant_name}}</h5>
+                        <p style="font-family: 'Lobster Two', cursive;font-size:30px;">Qualification:{{applicant.qualification}}</p>
+                        <p style="font-family: 'Lobster Two', cursive;font-size:30px;" >Experience:{{applicant.experience}}</p>
+                        <p style="font-family: 'Lobster Two', cursive;font-size:30px;">Skills:{{applicant.skills}}</p>
+                        <a href="{{applicant.resume.url}}">view resume</a>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{%endblock%}

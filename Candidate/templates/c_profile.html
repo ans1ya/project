@@ -1,0 +1,18 @@
+{%extends 'c_base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row mt-5" >
+        <form action="" enctype="multipart/form-data" method="post" >
+            <div style='border:2px solid black;width:100%;background-color: rgb(182, 202, 211);padding-left:60px;padding-top:30px;padding-right:59px;padding-bottom:30px'>
+                {%csrf_token%}
+                {{form.as_p}}
+            <input type="submit" value="Add Profile">
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+
+{%endblock%}

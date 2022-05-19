@@ -1,0 +1,17 @@
+{%extends 'e_base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row mt-5">
+        <div class="">
+            <form action="" method="post" enctype="multipart/form-data" style="border:2px solid black ;background-color: rgb(182, 202, 211);padding-left:60px;padding-top:30px;padding-right:59px;padding-bottom:30px;box-sizing:content-box">
+
+                {%csrf_token%}
+                {{form.as_p}}
+                <input type="submit" value="Post Job">
+            </form>
+            <a href="{%url 'ehome'%}" style="font-size:30px;">Back</a>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

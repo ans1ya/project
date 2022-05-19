@@ -1,0 +1,25 @@
+{%extends 'e_base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class=" mt-5 mb-5">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div style='border:2px solid black;width:100%;background-color: rgb(182, 202, 211);padding-left:60px;padding-top:30px;padding-right:59px;padding-bottom:30px'>
+                    {%csrf_token%}
+                {{form.as_p}}
+                    <input type="submit" value="update">
+
+                </div>
+
+
+            </form>
+<!--            <a href="{%url 'listjob'%}" style="font-size:30px;font-family: 'Cookie', cursive;"><-Back</a>-->
+        </div>
+
+
+    </div>
+
+</div>
+
+
+{%endblock%}

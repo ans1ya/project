@@ -1,0 +1,67 @@
+{%extends 'c_base.html'%}
+{%block body_block%}
+{%load static%}
+
+<div class="container mt-3 ">
+    <div style="font-family: 'Ramaraja', serif;font-size:20px;background-color: rgb(8, 31, 73);color: blanchedalmond;width:100%;text-align:center">
+        <marquee width="100%" direction="right" height="30px" margin-top="2px">
+            Welcome to Job Portal
+        </marquee>
+    </div>
+</div>
+
+
+
+
+<div class="container-fluid" style="margin-top:1%">
+    <img src="{% static 'images/jobsearch.jpeg' %}" style="height:600px;width:100%" alt="">
+</div>
+
+<div class="container">
+    <div class="row mt-4 mb-5">
+        <div class="col-4 mt-4">
+            <div class="card border border-dark " style="width: 18rem;">
+                <img class="card-img-top" src="{%static 'images/myprofile.jpeg'%}" alt="Card image cap">
+                <div class="card-body">
+                    {% if request.user.applicant %}
+                    <a class="btn btn-primary" style="font-family: 'Lemonada', cursive;font-size:20px;margin-left:73px"
+                       href="{%url 'c_viewprofile'%}">View Profile</a>
+                    {%else%}
+                    <a class="btn btn-primary" style="font-family: 'Lemonada', cursive;font-size:20px;margin-left:73px"
+                       href="{%url 'c_profile'%}">Add Profile</a>
+                    {%endif%}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4 mt-4">
+            <div class="card border border-dark" style="width: 18rem; ">
+                <img class="card-img-top" src="{%static 'images/new jobs.jpeg'%}" alt="Card image cap">
+                <div class="card-body">
+                    <a class="btn btn-primary" style="font-family: 'Lemonada', cursive;font-size:20px;margin-left:73px"
+                       href="{%url 'c_joblist'%}">View Jobs</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="col-4 mt-4">
+            <div class="card border border-dark" style="width: 18rem;">
+                <img class="card-img-top" src="{%static 'images/searchjob.jpeg'%}" alt="Card image cap">
+                <div class="card-body ">
+                    <a class="btn btn-primary " style="font-family: 'Lemonada', cursive;font-size:20px;margin-left:73px"
+                       href="{%url 'c_joblist' %}">Search Jobs</a>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        </div>
+    </div>
+
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,84 @@
+{%extends 'e_base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row mt-5">
+        <div class=""></div>
+        <div class="col-12 mt-5">
+            <h3 style="text-align: center;font-family: 'Smokum', cursive;font-size:67px;">All Applicants</h3>
+            <hr>
+            <div style="margin-left:1050px;font-size:30px;">
+                 <a href="{%url 'summary'%}">View Summary</a>
+            </div>
+            <table class="table" style="margin-top:9px;border:1px solid;width:100%;padding:30px">
+                <tr style="border:1px solid;text-align:center;">
+                    <th>Candidate Name</th>
+                    <th>Job Title</th>
+                    <th>Qualification</th>
+                    <th>Applied Date</th>
+                    <th>Action</th>
+                    <th>status</th>
+                    <th>Status Updated On</th>
+                </tr>
+                {%for application in applications%}
+                <tr style="border:1px solid;height:80px;text-align:center;padding:30px;">
+                    <td><a href="{%url 'applicant_detail' application.applicant.id  %}">{{application.applicant.applicant_name}}</a>
+                    </td>
+                    <td>{{application.job.job_title}}</td>
+                    <td>{{application.applicant.qualification}}</td>
+                    <td>{{application.submitted_date}}</td>
+                    <td>
+                        {%if application.status == 'under_processing' %}
+                        <a href="{%url 'process_application' application.id%}">Process Application</a>
+                    </td>
+                    {%else%}
+                    <p>No action to perform,Status Updated</p>
+                    {%endif%}
+                    {%if application.status == 'accepted' %}
+                    <td>
+                        <button class="btn btn-success mt-5" style="width:100%">{{application.status}}</button>
+                    </td>
+
+                    {%elif application.status == 'rejected'%}
+                    <td>
+                        <button class="btn btn-danger mt-5" style="width:100%">{{application.status}}</button>
+                    </td>
+                    {%endif%}
+
+                    {%if application.status == 'accepted'%}
+                    <td>{{application.status_updated_date}}</td>
+                    {%elif application.status == 'rejected'%}
+                    <td>{{application.status_updated_date}}</td>
+                    {%endif%}
+
+                </tr>
+                {%endfor%}
+
+            </table>
+
+        </div>
+        <div class=""></div>
+    </div>
+
+<div class="pagination mb-5 mt-5">
+    <span class="step-links">
+        {% if applications.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ applications.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ applications.number }} of {{ applications.paginator.num_pages }}.
+        </span>
+
+        {% if applications.has_next %}
+            <a href="?page={{ applications.next_page_number }}">next</a>
+            <a href="?page={{ applications.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+
+</div>
+
+
+{%endblock%}

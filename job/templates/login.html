@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+{%block body_block%}
+{%load static%}
+<!--{% if messages %}-->
+<!--<ul class="messages">-->
+<!--    {% for message in messages %}-->
+<!--    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+<!--{% endif %}-->
+
+
+{%if messages%}
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            {%for message in messages%}
+
+            <div class="alert alert-primary" role="alert">
+                {{message}}
+
+            </div>
+            {%endfor%}
+        </div>
+        <div class="col-4"></div>
+    </div>
+
+{%endif%}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4" style="">
+            <img src="{%static 'images/joblogo.jpeg'%}" alt="" height="80px" style="margin-left: 80px;margin-top: 50px;">
+            <form action="" method="post" style="border: 2px solid grey ;background-color: rgb(182, 202, 211);padding-left:29px;padding-top:30px;padding-bottom:30px;padding-right:33px;width:100%;" >
+                {%csrf_token%}
+                {{form.as_p}}
+                <a href="{%url 'password_reset' %}">Forgot Password?</a>
+                <input type="submit" value="Signin" class="btn btn-primary" style="margin-left:-3px;margin-top:20px;width:100%;">
+            </form>
+            <div style="padding-left:27px">
+            <p><h4>New to Job Portal?? <a href="{%url 'register'%}">Register</a></h4></p>
+            </div>
+
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+{%endblock%}

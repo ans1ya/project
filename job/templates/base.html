@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a3b54532bc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{%static 'css/searchform.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Cookie&family=Lobster+Two:ital@1&family=Oleo+Script:wght@700&family=Ramaraja&family=Rubik+Mono+One&family=Russo+One&family=Saira+Semi+Condensed:wght@400;600&family=Smokum&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Cookie&family=Courgette&family=Lobster+Two:ital@1&family=Oleo+Script:wght@700&family=Orbitron&family=Ramaraja&family=Rubik+Mono+One&family=Russo+One&family=Saira+Semi+Condensed:wght@400;600&family=Send+Flowers&family=Shadows+Into+Light&family=Smokum&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .nav-link:hover
+        {
+        font-weight:bold;
+        background-color:orange;
+        border-radius:10px;
+        }
+    .navbar-brand:hover
+    {
+    color:orange !important;
+    }
+    .body{
+    box-sizing:border-box;}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 mt-4 ">
+            <img src="{% static 'images/joblogo.jpeg'  %}" style="width:200px; height:110px" ; alt="">
+        </div>
+        <div class="col-sm-6 mt-4 text-center">
+            <span style="font-weight:bold;font-size:78px;font-family: 'Orbitron', sans-serif;">
+<!--                <span style="color:rgb(21, 178, 184)">Online</span>-->
+                <span style="color:rgb(21, 178, 184)">Job Portal</span>
+            </span>
+            <p style="margin-top:-20px;font-family: 'Orbitron', sans-serif;color:rgb(32, 177, 10);">for a promising future</p>
+
+        </div>
+        <div class="col-sm-3 mt-4" style="padding-left:10%">
+            <span style="font-weight:bold">
+                <ul class="nav me-auto p-3" >
+                    <a href=""><li style="padding-left:35px;" ><span><i class="fa fa-2x fa-twitter pl-1"></i></span></li></a>
+                    <a href=""><li style="padding-left:20px;"><span><i class="fa fa-2x fa-facebook pl-2"></i></span></li></a>
+                    <a href=""><li style="padding-left:15px;"><span><i class="fa fa-2x fa-instagram pl-3"></i></span></li></a>
+                </ul>
+<!--                <span><i class="fa fa-2x fa-twitter pl-1"></i></span> -->
+<!--                <span><i class="fa fa-2x fa-facebook pl-2"></i></span> -->
+<!--                <span><i class="fa fa-2x fa-instagram pl-3"></i></span> -->
+
+            </span>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(98, 146, 236)">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white " style="font-family: 'Lemonada', cursive;font-size:30px" href="#">Job
+            Portal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page"
+                       style="font-family: 'Lemonada', cursive;font-size:20px" href="{%url 'index'%}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" style="font-family: 'Lemonada', cursive;font-size:20px"
+                       href="{%url 'register'%}">Register</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" style="font-family: 'Lemonada', cursive;font-size:20px"
+                       href="{%url 'login'%}">Signin</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" style="font-family: 'Lemonada', cursive;font-size:20px" href="#">Contact
+                        us</a>
+                </li>
+            </ul>
+            <form class="d-flex" action="{%url 'search' %}" method="get">
+                    <input class="form-control me-2" type="search" name="search" placeholder="location/designation"
+                           aria-label="Search">
+                    <button class="btn btn-outline-warning" type="submit">Search</button>
+                </form>
+
+
+        </div>
+    </div>
+</nav>
+{%block body_block%}
+
+
+{%endblock%}
+
+</body>
+</html>
